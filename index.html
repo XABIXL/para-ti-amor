@@ -1,344 +1,656 @@
 <!doctype html>
-<html lang="es">
+
+<html *lang*="es">
+
 <head>
-<meta charset="utf-8">
+
+<meta *charset*="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
 <title>Para ti, en el día de las flores amarillas</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Figtree:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="preconnect" *href*="https://fonts.googleapis.com">
+
+<link rel="preconnect" *href*="https://fonts.gstatic.com" crossorigin>
+
+<link *href*="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Figtree:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
+
 :root{
-  box-sizing:border-box;
-  padding-top:env(safe-area-inset-top,0px);
-  padding-bottom:env(safe-area-inset-bottom,0px);
-  --bg:#f2ecfa;
-  --ink:#3b2f52;
-  --muted:#6d6288;
-  --line:#dacdec;
-  --petal:#fbdf7c;
-  --petal-inner:#fdeeab;
-  --core:#a98466;
-  --core-deep:#7d6250;
-  --seed:#f0d3ad;
-  --leaf:#93c7a5;
-  --btn-ink:#3b2f52;
-  --serif:'Fraunces',Georgia,'Times New Roman',serif;
-  --sans:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+
+  box-sizing:border-box;
+
+  padding-top:env(safe-area-inset-top,0px);
+
+  padding-bottom:env(safe-area-inset-bottom,0px);
+
+  --bg:#f2ecfa;
+
+  --ink:#3b2f52;
+
+  --muted:#6d6288;
+
+  --line:#dacdec;
+
+  --petal:#fbdf7c;
+
+  --petal-inner:#fdeeab;
+
+  --core:#a98466;
+
+  --core-deep:#7d6250;
+
+  --seed:#f0d3ad;
+
+  --leaf:#93c7a5;
+
+  --btn-ink:#3b2f52;
+
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+
+  --sans:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+
 }
+
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#1e1a2d;
-    --ink:#f6eefc;
-    --muted:#c3b8dc;
-    --line:#3a3153;
-    --btn-ink:#3b2f52;
-  }
+
+  :root:not([data-theme="light"]){
+
+    --bg:#1e1a2d;
+
+    --ink:#f6eefc;
+
+    --muted:#c3b8dc;
+
+    --line:#3a3153;
+
+    --btn-ink:#3b2f52;
+
+  }
+
 }
+
 :root[data-theme="dark"]{
-  --bg:#1e1a2d;
-  --ink:#f6eefc;
-  --muted:#c3b8dc;
-  --line:#3a3153;
-  --btn-ink:#3b2f52;
+
+  --bg:#1e1a2d;
+
+  --ink:#f6eefc;
+
+  --muted:#c3b8dc;
+
+  --line:#3a3153;
+
+  --btn-ink:#3b2f52;
+
 }
+
 *,*::before,*::after{box-sizing:inherit}
+
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--sans);
-  font-size:1.0625rem;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
+
+  margin:0;
+
+  background:var(--bg);
+
+  color:var(--ink);
+
+  font-family:var(--sans);
+
+  font-size:1.0625rem;
+
+  line-height:1.6;
+
+  -webkit-font-smoothing:antialiased;
+
 }
+
 main{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+
 section{padding:3.5rem 0}
 
 /* Hero */
+
 .hero{text-align:center;padding-top:2.5rem;padding-bottom:2rem}
+
 h1{
-  font-family:var(--serif);
-  font-variation-settings:'opsz' 144;
-  font-weight:600;
-  font-size:clamp(2.3rem,9vw,4rem);
-  line-height:1.05;
-  letter-spacing:-.01em;
-  margin:0 0 1.5rem;
-  text-wrap:balance;
+
+  font-family:var(--serif);
+
+  font-variation-settings:'opsz' 144;
+
+  font-weight:600;
+
+  font-size:clamp(2.3rem,9vw,4rem);
+
+  line-height:1.05;
+
+  letter-spacing:-.01em;
+
+  margin:0 0 1.5rem;
+
+  text-wrap:balance;
+
 }
+
 .bloom{
-  display:block;
-  margin:0 auto;
-  padding:0;
-  border:0;
-  background:none;
-  width:min(72vw,290px);
-  cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
+
+  display:block;
+
+  margin:0 auto;
+
+  padding:0;
+
+  border:0;
+
+  background:none;
+
+  width:min(72vw,290px);
+
+  cursor:pointer;
+
+  -webkit-tap-highlight-color:transparent;
+
 }
+
 .bloom svg{display:block;width:100%;height:auto;overflow:visible}
+
 .hint{margin:1rem 0 0;color:var(--muted);font-size:.98rem}
+
 :focus-visible{outline:3px solid var(--ink);outline-offset:4px;border-radius:6px}
 
 /* Flower parts */
+
 .p-out{fill:var(--petal)}
+
 .p-in{fill:var(--petal-inner)}
+
 .core-c{fill:var(--core)}
+
 .core-d{fill:var(--core-deep)}
+
 .seed{fill:var(--seed)}
+
 .sepal{fill:var(--leaf)}
+
 .leaf{fill:var(--leaf)}
+
 .stem{stroke:var(--leaf)}
+
 .head{transform-origin:120px 110px;transform:scale(.5);transition:transform 1.1s cubic-bezier(.2,.9,.25,1.12)}
+
 .core{transform-origin:120px 110px;transform:scale(.4);transition:transform .9s .5s ease}
+
 .petal{transform-box:fill-box;transform-origin:50% 100%;transform:scale(.35);transition:transform 1s cubic-bezier(.2,1.2,.3,1) calc(var(--i) * 30ms)}
+
 .sepal{transition:opacity .6s .35s ease}
+
 .open .head,.open .core,.open .petal{transform:scale(1)}
+
 .open .sepal{opacity:0}
 
 /* Section titles */
+
 h2{
-  font-family:var(--serif);
-  font-variation-settings:'opsz' 72;
-  font-weight:600;
-  font-size:clamp(1.6rem,5vw,2.1rem);
-  line-height:1.15;
-  margin:0 0 1.5rem;
+
+  font-family:var(--serif);
+
+  font-variation-settings:'opsz' 72;
+
+  font-weight:600;
+
+  font-size:clamp(1.6rem,5vw,2.1rem);
+
+  line-height:1.15;
+
+  margin:0 0 1.5rem;
+
 }
 
 /* Letter */
+
 .letter{max-width:34rem;margin:0 auto}
+
 .letter p{
-  font-family:var(--serif);
-  font-size:1.2rem;
-  line-height:1.8;
-  margin:0 0 1.25rem;
-  text-wrap:pretty;
+
+  font-family:var(--serif);
+
+  font-size:1.2rem;
+
+  line-height:1.8;
+
+  margin:0 0 1.25rem;
+
+  text-wrap:pretty;
+
 }
+
 .letter .to{font-style:italic}
+
 .letter .sign{font-style:italic;margin-top:2rem}
 
 /* Memories */
+
 .memories{text-align:center}
+
 .memories p.lead{color:var(--muted);margin:-.75rem auto 2rem;max-width:26rem}
+
 .row{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1rem}
+
 .mflower{
-  width:6.5rem;
-  border:0;
-  background:none;
-  padding:0;
-  font:inherit;
-  color:var(--ink);
-  cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
+
+  width:6.5rem;
+
+  border:0;
+
+  background:none;
+
+  padding:0;
+
+  font:inherit;
+
+  color:var(--ink);
+
+  cursor:pointer;
+
+  -webkit-tap-highlight-color:transparent;
+
 }
+
 .mflower svg{display:block;width:100%;height:auto}
+
 .mflower span{display:block;font-size:.85rem;line-height:1.3;margin-top:.15rem;color:var(--muted)}
+
 .mflower[aria-expanded="true"] span{color:var(--ink);font-weight:500}
+
 .panel{
-  margin:2rem auto 0;
-  max-width:30rem;
-  min-height:8rem;
-  padding-top:1.5rem;
-  border-top:2px solid var(--petal);
+
+  margin:2rem auto 0;
+
+  max-width:30rem;
+
+  min-height:8rem;
+
+  padding-top:1.5rem;
+
+  border-top:2px solid var(--petal);
+
 }
+
 .panel .t{font-weight:500;margin:0 0 .5rem}
+
 .panel .d{
-  font-family:var(--serif);
-  font-style:italic;
-  font-size:1.35rem;
-  line-height:1.5;
-  margin:0;
-  text-wrap:balance;
+
+  font-family:var(--serif);
+
+  font-style:italic;
+
+  font-size:1.35rem;
+
+  line-height:1.5;
+
+  margin:0;
+
+  text-wrap:balance;
+
 }
+
 .panel .empty{color:var(--muted);margin:0}
 
 /* Closing */
+
 .closing{text-align:center;padding-bottom:5rem}
+
 .closing p.lead{max-width:26rem;margin:-.75rem auto 1.75rem;color:var(--muted)}
+
 .btn{
-  font:inherit;
-  font-weight:500;
-  background:var(--petal);
-  color:var(--btn-ink);
-  border:0;
-  border-radius:999px;
-  padding:.9rem 1.8rem;
-  cursor:pointer;
+
+  font:inherit;
+
+  font-weight:500;
+
+  background:var(--petal);
+
+  color:var(--btn-ink);
+
+  border:0;
+
+  border-radius:999px;
+
+  padding:.9rem 1.8rem;
+
+  cursor:pointer;
+
 }
+
 .btn:hover{background:var(--petal-inner)}
+
 .bouquet{display:none;justify-content:center;align-items:flex-end;gap:.25rem;margin-top:2rem}
+
 .bouquet.show{display:flex}
+
 .bouquet svg{width:4.5rem;height:auto}
+
 .bouquet svg:nth-child(2n){width:5.5rem}
+
 .bouquet svg:nth-child(3){width:6.5rem}
+
 .final{
-  font-family:var(--serif);
-  font-size:1.5rem;
-  font-style:italic;
-  margin:1.5rem 0 0;
-  display:none;
+
+  font-family:var(--serif);
+
+  font-size:1.5rem;
+
+  font-style:italic;
+
+  margin:1.5rem 0 0;
+
+  display:none;
+
 }
+
 .final.show{display:block}
 
 /* Falling flowers */
+
 #layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:5}
+
 .float{position:absolute;bottom:-90px;animation:rise linear forwards}
+
 .float svg{display:block;width:100%;height:100%}
+
 @keyframes rise{
-  from{transform:translate(0,0) rotate(0deg);opacity:1}
-  to{transform:translate(var(--sway),-115vh) rotate(200deg);opacity:.9}
+
+  from{transform:translate(0,0) rotate(0deg);opacity:1}
+
+  to{transform:translate(var(--sway),-115vh) rotate(200deg);opacity:.9}
+
 }
 
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .head,.core,.petal,.sepal{transition-duration:.01ms;transition-delay:0s}
+
+  html{scroll-behavior:auto}
+
+  .head,.core,.petal,.sepal{transition-duration:.01ms;transition-delay:0s}
+
 }
+
 </style>
+
 </head>
+
 <body>
+
+  <!-- Música de fondo -->
+  <audio id="musica" preload="auto" loop>
+    <source src="musica/1.mp3" type="audio/mpeg">
+    Tu navegador no puede reproducir audio.
+  </audio>
+
+
 <main>
 
-  <section class="hero">
-    <h1>Hoy se regalan flores amarillas</h1>
-    <button class="bloom" id="bloom" aria-pressed="false" aria-label="Abrir la flor"></button>
-    <p class="hint" id="hint">Toca la flor</p>
-  </section>
+  <section class="hero">
 
-  <section class="letter" aria-labelledby="carta">
-    <h2 id="carta">Una carta para ti</h2>
-    <p class="to">Mi amor:</p>
-    <p>Hoy se regalan flores amarillas y, como no puedo ponértelas en las manos, te mando estas gerberas desde donde estoy. Sé que son tus flores favoritas, y no podía regalarte otras: son alegres, luminosas y abiertas de par en par, como tú.</p>
-    <p>La distancia nos pide paciencia, pero también nos enseñó cosas: que un mensaje en la mañana vale muchísimo, que tu voz al otro lado de una llamada puede sentirse como estar en casa, y que amar es elegirse todos los días aunque haya kilómetros de por medio.</p>
-    <p>No sé si te lo digo lo suficiente, así que lo escribo aquí: gracias por tu paciencia, por tu ternura y por hacerme sentir cerca aun estando lejos. Cada día que pasa es un día menos para poder abrazarte, y ese pensamiento me sostiene.</p>
-    <p>Estas flores son de mentira, pero lo que siento por ti es de lo más real que tengo. Algún día te llevaré gerberas de verdad.</p>
-    <p>Te amo muchísimo.</p>
-    <p class="sign">Con todo mi amor, desde lejos.</p>
-  </section>
+    <h1>Hoy se regalan flores amarillas</h1>
 
-  <section class="memories" aria-labelledby="recuerdos">
-    <h2 id="recuerdos">Nuestros recuerdos</h2>
-    <p class="lead">Cada flor guarda algo de nosotros. Toca las que quieras.</p>
-    <div class="row" id="row"></div>
-    <div class="panel" id="panel" aria-live="polite">
-      <p class="empty">Elige una flor para leer un recuerdo.</p>
-    </div>
-  </section>
+    <button class="bloom" id="bloom" aria-pressed="false" aria-label="Abrir la flor"></button>
 
-  <section class="closing" aria-labelledby="ramo">
-    <h2 id="ramo">Un ramo para ti</h2>
-    <p class="lead">Para que hoy no te falten flores amarillas, aunque estemos lejos.</p>
-    <button class="btn" id="ramoBtn">Recibir mi ramo</button>
-    <div class="bouquet" id="bouquet" aria-hidden="true"></div>
-    <p class="final" id="final">Feliz día de las flores amarillas. Te amo.</p>
-  </section>
+    <p class="hint" id="hint">Toca la flor</p>
+
+  </section>
+
+  <section class="letter" aria-labelledby="carta">
+
+    <h2 id="carta">Una carta para ti</h2>
+
+    <p class="to">Mi amor:</p>
+
+    <p>Hoy se regalan flores amarillas y, como no puedo ponértelas en las manos, te mando estas gerberas desde donde estoy. Sé que son tus flores favoritas, y no podía regalarte otras: son alegres, luminosas y abiertas de par en par, como tú.</p>
+
+    <p>La distancia nos pide paciencia, pero también nos enseñó cosas: que un mensaje en la mañana vale muchísimo, que tu voz al otro lado de una llamada puede sentirse como estar en casa, y que amar es elegirse todos los días aunque haya kilómetros de por medio.</p>
+
+    <p>No sé si te lo digo lo suficiente, así que lo escribo aquí: gracias por tu paciencia, por tu ternura y por hacerme sentir cerca aun estando lejos. Cada día que pasa es un día menos para poder abrazarte, y ese pensamiento me sostiene.</p>
+
+    <p>Estas flores son de mentira, pero lo que siento por ti es de lo más real que tengo. Algún día te llevaré gerberas de verdad.</p>
+
+    <p>Te amo muchísimo.</p>
+
+    <p class="sign">Con todo mi amor, desde lejos.</p>
+
+  </section>
+
+  <section class="memories" aria-labelledby="recuerdos">
+
+    <h2 id="recuerdos">Nuestros recuerdos</h2>
+
+    <p class="lead">Cada flor guarda algo de nosotros. Toca las que quieras.</p>
+
+    <div class="row" id="row"></div>
+
+    <div class="panel" id="panel" aria-live="polite">
+
+      <p class="empty">Elige una flor para leer un recuerdo.</p>
+
+    </div>
+
+  </section>
+
+  <section class="closing" aria-labelledby="ramo">
+
+    <h2 id="ramo">Un ramo para ti</h2>
+
+    <p class="lead">Para que hoy no te falten flores amarillas, aunque estemos lejos.</p>
+
+    <button class="btn" id="ramoBtn">Recibir mi ramo</button>
+
+    <div class="bouquet" id="bouquet" aria-hidden="true"></div>
+
+    <p class="final" id="final">Feliz día de las flores amarillas. Te amo.</p>
+
+  </section>
 
 </main>
+
 <div id="layer" aria-hidden="true"></div>
 
 <script>
+
 (function(){
-  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Gerbera: two rings of long, narrow petals and a layered center */
-  function head(){
-    var s = '<g class="head">';
-    var i;
-    for(i=0;i<24;i++){
-      s += '<g transform="rotate('+(i*15)+' 120 110)"><ellipse class="petal p-out" cx="120" cy="77" rx="6.5" ry="33" style="--i:'+i+'"/></g>';
-    }
-    for(i=0;i<18;i++){
-      s += '<g transform="rotate('+(i*20+7.5)+' 120 110)"><ellipse class="petal p-in" cx="120" cy="89" rx="5.5" ry="21" style="--i:'+(i+6)+'"/></g>';
-    }
-    s += '<g class="core"><circle class="core-c" cx="120" cy="110" r="17"/>';
-    for(i=0;i<18;i++){
-      var a = i*20*Math.PI/180;
-      s += '<circle class="seed" cx="'+(120+13*Math.cos(a)).toFixed(1)+'" cy="'+(110+13*Math.sin(a)).toFixed(1)+'" r="1.6"/>';
-    }
-    s += '<circle class="core-d" cx="120" cy="110" r="8.5"/>';
-    for(var k=1;k<=12;k++){
-      var r = 1.9*Math.sqrt(k), b = k*2.39996;
-      s += '<circle class="seed" cx="'+(120+r*Math.cos(b)).toFixed(1)+'" cy="'+(110+r*Math.sin(b)).toFixed(1)+'" r=".8"/>';
-    }
-    s += '</g><circle class="sepal" cx="120" cy="110" r="14"/></g>';
-    return s;
-  }
-  function small(open){
-    return '<svg viewBox="50 40 140 140" aria-hidden="true"'+(open?' class="open"':'')+'>'+head()+'</svg>';
-  }
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Hero flower */
-  var bloom = document.getElementById('bloom');
-  var hint = document.getElementById('hint');
-  bloom.innerHTML =
-    '<svg viewBox="0 0 240 330" aria-hidden="true">' +
-    '<path class="stem" d="M120 120 C 118 200, 124 260, 120 328" fill="none" stroke-width="6" stroke-linecap="round"/>' +
-    '<path class="leaf" d="M121 240 C 160 215, 195 225, 205 200 C 170 195, 135 205, 121 240Z"/>' +
-    '<path class="leaf" d="M119 270 C 80 250, 45 262, 33 236 C 70 230, 105 240, 119 270Z"/>' +
-    head() + '</svg>';
-  bloom.addEventListener('click', function(){
-    var svg = bloom.querySelector('svg');
-    var isOpen = svg.classList.toggle('open');
-    bloom.setAttribute('aria-pressed', isOpen ? 'true' : 'false');
-    bloom.setAttribute('aria-label', isOpen ? 'Cerrar la flor' : 'Abrir la flor');
-    hint.textContent = isOpen ? 'Sigue bajando: hay una carta para ti.' : 'Toca la flor';
-  });
+  */* Gerbera: two rings of long, narrow petals and a layered center */*
 
-  /* Memories */
-  var memories = [
-    {t:'El día que te conocí', d:'Todavía no lo sabía, pero ese día empezó mi historia favorita.'},
-    {t:'Nuestras llamadas', d:'Hay días en que tu voz es lo mejor que me pasa, y la espero como se espera el sol.'},
-    {t:'Cuando supe que eras tú', d:'No hubo un momento exacto. Fueron mil pequeños detalles que me llevaron a ti.'},
-    {t:'Lo que más amo de ti', d:'Tu forma de mirar, de cuidar, de ser tú. No cambiaría nada.'},
-    {t:'El día que nos veamos', d:'Te voy a abrazar tan fuerte que se nos va a olvidar cuánto tiempo estuvimos lejos.'}
-  ];
-  var row = document.getElementById('row');
-  var panel = document.getElementById('panel');
-  memories.forEach(function(m){
-    var b = document.createElement('button');
-    b.className = 'mflower';
-    b.setAttribute('aria-expanded','false');
-    b.innerHTML = small(false) + '<span>'+m.t+'</span>';
-    b.addEventListener('click', function(){
-      b.querySelector('svg').classList.add('open');
-      Array.prototype.forEach.call(row.children, function(o){ o.setAttribute('aria-expanded','false'); });
-      b.setAttribute('aria-expanded','true');
-      panel.innerHTML = '<p class="t"></p><p class="d"></p>';
-      panel.querySelector('.t').textContent = m.t;
-      panel.querySelector('.d').textContent = m.d;
-    });
-    row.appendChild(b);
-  });
+  function head(){
 
-  /* Bouquet */
-  var bouquet = document.getElementById('bouquet');
-  bouquet.innerHTML = [1,2,3,4,5].map(function(){ return small(true); }).join('');
-  var layer = document.getElementById('layer');
-  var ramoBtn = document.getElementById('ramoBtn');
-  var final = document.getElementById('final');
+    var s = '<g class="head">';
 
-  function shower(){
-    for(var i=0;i<34;i++){
-      var el = document.createElement('div');
-      var size = 28 + Math.random()*44;
-      el.className = 'float';
-      el.style.cssText = 'left:'+(Math.random()*100)+'%;width:'+size+'px;height:'+size+'px;' +
-        'animation-duration:'+(4+Math.random()*3.5)+'s;animation-delay:'+(Math.random()*1.2)+'s;' +
-        '--sway:'+(Math.random()*60-30)+'px';
-      el.innerHTML = small(true);
-      layer.appendChild(el);
-      (function(node){ setTimeout(function(){ node.remove(); }, 9000); })(el);
-    }
-  }
-  ramoBtn.addEventListener('click', function(){
-    bouquet.classList.add('show');
-    final.classList.add('show');
-    if(!reduced){ shower(); }
-    final.scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block:'center'});
-  });
+    var i;
+
+    for(i=0;i<24;i++){
+
+      s += '<g transform="rotate('+(i*15)+' 120 110)"><ellipse class="petal p-out" cx="120" cy="77" rx="6.5" ry="33" style="--i:'+i+'"/></g>';
+
+    }
+
+    for(i=0;i<18;i++){
+
+      s += '<g transform="rotate('+(i*20+7.5)+' 120 110)"><ellipse class="petal p-in" cx="120" cy="89" rx="5.5" ry="21" style="--i:'+(i+6)+'"/></g>';
+
+    }
+
+    s += '<g class="core"><circle class="core-c" cx="120" cy="110" r="17"/>';
+
+    for(i=0;i<18;i++){
+
+      var a = i*20*Math.PI/180;
+
+      s += '<circle class="seed" cx="'+(120+13*Math.cos(a)).toFixed(1)+'" cy="'+(110+13*Math.sin(a)).toFixed(1)+'" r="1.6"/>';
+
+    }
+
+    s += '<circle class="core-d" cx="120" cy="110" r="8.5"/>';
+
+    for(var k=1;k<=12;k++){
+
+      var r = 1.9*Math.sqrt(k), b = k*2.39996;
+
+      s += '<circle class="seed" cx="'+(120+r*Math.cos(b)).toFixed(1)+'" cy="'+(110+r*Math.sin(b)).toFixed(1)+'" r=".8"/>';
+
+    }
+
+    s += '</g><circle class="sepal" cx="120" cy="110" r="14"/></g>';
+
+    return s;
+
+  }
+
+  function small(open){
+
+    return '<svg viewBox="50 40 140 140" aria-hidden="true"'+(open?' class="open"':'')+'>'+head()+'</svg>';
+
+  }
+
+  */* Hero flower */*
+
+  var bloom = document.getElementById('bloom');
+
+  var hint = document.getElementById('hint');
+
+  bloom.innerHTML =
+
+    '<svg viewBox="0 0 240 330" aria-hidden="true">' +
+
+    '<path class="stem" d="M120 120 C 118 200, 124 260, 120 328" fill="none" stroke-width="6" stroke-linecap="round"/>' +
+
+    '<path class="leaf" d="M121 240 C 160 215, 195 225, 205 200 C 170 195, 135 205, 121 240Z"/>' +
+
+    '<path class="leaf" d="M119 270 C 80 250, 45 262, 33 236 C 70 230, 105 240, 119 270Z"/>' +
+
+    head() + '</svg>';
+
+  bloom.addEventListener('click', function(){
+
+    var svg = bloom.querySelector('svg');
+
+    var isOpen = svg.classList.toggle('open');
+
+    bloom.setAttribute('aria-pressed', isOpen ? 'true' : 'false');
+
+    bloom.setAttribute('aria-label', isOpen ? 'Cerrar la flor' : 'Abrir la flor');
+
+    hint.textContent = isOpen ? 'Sigue bajando: hay una carta para ti.' : 'Toca la flor';
+
+  });
+
+  */* Memories */*
+
+  var memories = [
+
+    {t:'El día que te conocí', d:'Todavía no lo sabía, pero ese día empezó mi historia favorita.'},
+
+    {t:'Nuestras llamadas', d:'Hay días en que tu voz es lo mejor que me pasa, y la espero como se espera el sol.'},
+
+    {t:'Cuando supe que eras tú', d:'No hubo un momento exacto. Fueron mil pequeños detalles que me llevaron a ti.'},
+
+    {t:'Lo que más amo de ti', d:'Tu forma de mirar, de cuidar, de ser tú. No cambiaría nada.'},
+
+    {t:'El día que nos veamos', d:'Te voy a abrazar tan fuerte que se nos va a olvidar cuánto tiempo estuvimos lejos.'}
+
+  ];
+
+  var row = document.getElementById('row');
+
+  var panel = document.getElementById('panel');
+
+  memories.forEach(function(m){
+
+    var b = document.createElement('button');
+
+    b.className = 'mflower';
+
+    b.setAttribute('aria-expanded','false');
+
+    b.innerHTML = small(false) + '<span>'+m.t+'</span>';
+
+    b.addEventListener('click', function(){
+
+      b.querySelector('svg').classList.add('open');
+
+      Array.prototype.forEach.call(row.children, function(o){ o.setAttribute('aria-expanded','false'); });
+
+      b.setAttribute('aria-expanded','true');
+
+      panel.innerHTML = '<p class="t"></p><p class="d"></p>';
+
+      panel.querySelector('.t').textContent = m.t;
+
+      panel.querySelector('.d').textContent = m.d;
+
+    });
+
+    row.appendChild(b);
+
+  });
+
+  */* Bouquet */*
+
+  var bouquet = document.getElementById('bouquet');
+
+  bouquet.innerHTML = [1,2,3,4,5].map(function(){ return small(true); }).join('');
+
+  var layer = document.getElementById('layer');
+
+  var ramoBtn = document.getElementById('ramoBtn');
+
+  var final = document.getElementById('final');
+
+  function shower(){
+
+    for(var i=0;i<34;i++){
+
+      var el = document.createElement('div');
+
+      var size = 28 + Math.random()*44;
+
+      el.className = 'float';
+
+      el.style.cssText = 'left:'+(Math.random()*100)+'%;width:'+size+'px;height:'+size+'px;' +
+
+        'animation-duration:'+(4+Math.random()*3.5)+'s;animation-delay:'+(Math.random()*1.2)+'s;' +
+
+        '--sway:'+(Math.random()*60-30)+'px';
+
+      el.innerHTML = small(true);
+
+      layer.appendChild(el);
+
+      (function(node){ setTimeout(function(){ node.remove(); }, 9000); })(el);
+
+    }
+
+  }
+
+  ramoBtn.addEventListener('click', function(){
+
+    bouquet.classList.add('show');
+
+    final.classList.add('show');
+
+    if(!reduced){ shower(); }
+
+    final.scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block:'center'});
+
+  });
+
 })();
+
 </script>
+
 </body>
+
 </html>
